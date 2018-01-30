@@ -1,0 +1,21 @@
+Extract Unique characters
+
+Given a string, you need to remove all the duplicates. 
+That means, the output string should contain each character only once. The respective order of characters should remain same.
+
+solution
+
+#include<unordered_map>
+char* uniqueChar(char *str){
+    unordered_map<char,bool> p;
+  char *ans=new char[100];
+  int top=0;
+  for(int i=0;str[i]!='\0';i++) {
+    if(p.count(str[i])==0) {
+      p[str[i]]=true;
+      ans[top++]=str[i];
+    }
+  }
+  ans[top]='\0';
+  return ans;
+}
